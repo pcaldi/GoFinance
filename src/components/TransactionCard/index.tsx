@@ -14,17 +14,19 @@ type CategoryProps = {
   icon: string;
 };
 
-type TransactionCardProps = {
-  data: {
-    type: "positive" | "negative";
-    title: string;
-    amount: string;
-    category: CategoryProps;
-    date: string;
-  };
+export type TransactionCardProps = {
+  type: "positive" | "negative";
+  title: string;
+  amount: string;
+  category: CategoryProps;
+  date: string;
 };
 
-export function TransactionCard({ data }: TransactionCardProps) {
+type Props = {
+  data: TransactionCardProps;
+};
+
+export function TransactionCard({ data }: Props) {
   return (
     <Container>
       <Title>{data.title}</Title>

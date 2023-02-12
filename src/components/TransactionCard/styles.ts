@@ -3,9 +3,9 @@ import styled from "styled-components/native";
 import { Feather } from "@expo/vector-icons";
 import { RFValue } from "react-native-responsive-fontsize";
 
-type TransactionProps = {
+interface TransactionProps {
   type: "positive" | "negative";
-};
+}
 
 export const Container = styled.View`
   background-color: ${({ theme }) => theme.colors.shape};
