@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components/native";
 
 import { Feather } from "@expo/vector-icons";
-import { RFValue, RFPercentage } from "react-native-responsive-fontsize";
+import { RFValue } from "react-native-responsive-fontsize";
 
 type TypeProps = {
   type: "up" | "down" | "total";
