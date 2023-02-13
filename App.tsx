@@ -1,16 +1,16 @@
-import { ThemeProvider } from "styled-components/native";
+import { ThemeProvider } from 'styled-components/native';
 
-import { ActivityIndicator } from "react-native";
+import { ActivityIndicator } from 'react-native';
 
 import {
   useFonts,
   Poppins_400Regular,
   Poppins_500Medium,
   Poppins_700Bold,
-} from "@expo-google-fonts/poppins";
+} from '@expo-google-fonts/poppins';
 
-import theme from "./src/global/styles/theme";
-import { Register } from "./src/screens/Register";
+import theme from './src/global/styles/theme';
+import { Register } from './src/screens/Register';
 
 export default function App() {
   const [fontsLoaded] = useFonts({

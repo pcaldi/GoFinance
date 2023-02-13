@@ -1,32 +1,19 @@
-import {
-  Container,
-  Header,
-  Title,
-  Icon,
-  Footer,
-  Amount,
-  LastTransaction,
-} from "./styles";
+import { Container, Header, Title, Icon, Footer, Amount, LastTransaction } from './styles';
 
 type HighlightCardProps = {
-  type: "up" | "down" | "total";
+  type: 'up' | 'down' | 'total';
   title: string;
   amount: string;
   lastTransaction: string;
 };
 
 const icon = {
-  up: "arrow-up-circle",
-  down: "arrow-down-circle",
-  total: "dollar-sign",
+  up: 'arrow-up-circle',
+  down: 'arrow-down-circle',
+  total: 'dollar-sign',
 };
 
-export function HighlightCard({
-  type,
-  amount,
-  lastTransaction,
-  title,
-}: HighlightCardProps) {
+export function HighlightCard({ type, amount, lastTransaction, title }: HighlightCardProps) {
   return (
     <Container type={type}>
       <Header>

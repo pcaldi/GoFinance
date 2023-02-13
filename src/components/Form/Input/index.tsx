@@ -1,6 +1,6 @@
-import { Container } from "./styles";
+import { Container } from './styles';
 
-import { TextInputProps } from "react-native";
+import { TextInputProps } from 'react-native';
 
 type Props = TextInputProps;
 

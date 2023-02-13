@@ -1,14 +1,14 @@
-import { Container, Icon, Title } from "./styles";
+import { Container, Icon, Title } from './styles';
 
-import { TouchableOpacityProps } from "react-native";
+import { TouchableOpacityProps } from 'react-native';
 
 const icons = {
-  up: "arrow-up-circle",
-  down: "arrow-down-circle",
+  up: 'arrow-up-circle',
+  down: 'arrow-down-circle',
 };
 
 type TransactionTypeButtonProps = TouchableOpacityProps & {
-  type: "up" | "down";
+  type: 'up' | 'down';
   title: string;
   isActive: boolean;
 };
