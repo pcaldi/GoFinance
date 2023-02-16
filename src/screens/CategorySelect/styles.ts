@@ -12,13 +12,13 @@ export const Container = styled.View`
 `;
 
 export const Header = styled.View`
-  background-color: ${({ theme }) => theme.colors.primary};
-
   width: 100%;
   height: ${RFValue(113)}px;
 
-  justify-content: flex-end;
+  background-color: ${({ theme }) => theme.colors.primary};
+
   align-items: center;
+  justify-content: flex-end;
   padding-bottom: 19px;
 `;
 
@@ -30,7 +30,6 @@ export const Title = styled.Text`
 
 export const Category = styled.TouchableOpacity<CategoryProps>`
   width: 100%;
-
   padding: ${RFValue(15)}px;
 
   flex-direction: row;
@@ -53,10 +52,10 @@ export const Name = styled.Text`
 
 export const Separator = styled.View`
   width: 100%;
-  height: 1px;
-  background-color: ${({ theme }) => theme.colors.text};
+  height: 1.5px;
+  background-color: ${({ theme }) => theme.colors.title};
 `;
 export const Footer = styled.View`
   width: 100%;
-  padding: ${RFValue(24)}px;
+  padding: 24px;
 `;
