@@ -32,6 +32,7 @@ export type DataListProps = TransactionCardProps & {
 
 type HighlightDataProps = {
   amount: string;
+  lastTransaction: string;
 };
 
 type HighlightData = {
@@ -46,8 +47,22 @@ export function Dashboard() {
   const [isLoading, setIsLoading] = useState(true);
 
   const theme = useTheme();
-
   const dataKey = ' @gofinances:transactions';
+
+  function getLastTransactionDate(collection: DataListProps[], type: 'positive' | 'negative') {
+    const lastTransactions = new Date(
+      Math.max.apply(
+        Math,
+        collection
+          .filter((transaction) => transaction.type === type)
+          .map((transaction) => new Date(transaction.date).getTime())
+      )
+    );
+
+    return `${lastTransactions.getDate()} de ${lastTransactions.toLocaleString('pt-BR', {
+      month: 'long',
+    })}`;
+  }
 
   async function loadTransitions() {
     const response = await AsyncStorage.getItem(dataKey);
@@ -85,6 +100,11 @@ export function Dashboard() {
     });
 
     setTransaction(transactionFormatted);
+
+    const lastTransactionEntries = getLastTransactionDate(transactions, 'positive');
+    const lastTransactionExpensive = getLastTransactionDate(transactions, 'negative');
+    const totalInterval = `01 a ${lastTransactionExpensive}`;
+
     const total = entriesTotal - expensiveTotal;
     setHighlighData({
       entries: {
@@ -92,18 +112,21 @@ export function Dashboard() {
           style: 'currency',
           currency: 'BRL',
         }),
+        lastTransaction: `Última entrada dia ${lastTransactionEntries}`,
       },
       expensive: {
         amount: expensiveTotal.toLocaleString('pt-BR', {
           style: 'currency',
           currency: 'BRL',
         }),
+        lastTransaction: `Última saída dia ${lastTransactionExpensive}`,
       },
       total: {
         amount: total.toLocaleString('pt-BR', {
           style: 'currency',
           currency: 'BRL',
         }),
+        lastTransaction: totalInterval,
       },
     });
     setIsLoading(false);
@@ -145,19 +168,19 @@ export function Dashboard() {
             <HighlightCard
               title={'Entradas'}
               amount={highlighData.entries.amount}
-              lastTransaction={'Última entrada dia 13 de abril'}
+              lastTransaction={highlighData.entries.lastTransaction}
               type="up"
             />
             <HighlightCard
               title={'Saídas'}
               amount={highlighData.expensive.amount}
-              lastTransaction={'Última saída dia 03 de abril'}
+              lastTransaction={highlighData.expensive.lastTransaction}
               type="down"
             />
             <HighlightCard
               title={'Total'}
               amount={highlighData.total.amount}
-              lastTransaction={'01 à 16 de abril'}
+              lastTransaction={highlighData.total.lastTransaction}
               type="total"
             />
           </HighlightCards>
