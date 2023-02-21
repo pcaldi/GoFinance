@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Container, Title, Amount } from './styles';
 
 type HistoryCardProps = {

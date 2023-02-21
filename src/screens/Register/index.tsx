@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Modal, TouchableWithoutFeedback, Keyboard, Alert } from 'react-native';
 
 import uuid from 'react-native-uuid';
@@ -43,7 +43,6 @@ export function Register() {
     key: 'category',
     name: 'Categoria',
   });
-  const dataKey = ' @gofinances:transactions';
 
   const navigation = useNavigation<NavigationProps>();
 
@@ -88,9 +87,9 @@ export function Register() {
     };
 
     try {
+      const dataKey = '@gofinances:transactions';
       const data = await AsyncStorage.getItem(dataKey);
       const currentData = data ? JSON.parse(data) : [];
-
       const dataFormatted = [...currentData, newTransaction];
       await AsyncStorage.setItem(dataKey, JSON.stringify(dataFormatted));
 
@@ -107,18 +106,6 @@ export function Register() {
       Alert.alert('Não foi possível cadastrar.');
     }
   }
-
-  /* useEffect(() => {
-         async function loadData() {
-      const data = await AsyncStorage.getItem(dataKey);
-      console.log(JSON.parse(data!));
-    }
-    loadData();
-    async function removeAll() {
-      await AsyncStorage.removeItem(dataKey); // -Função para remover os itens cadastrados.
-    }
-    removeAll();
-  }, []); */
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>

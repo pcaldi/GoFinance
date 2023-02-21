@@ -47,7 +47,7 @@ export function Dashboard() {
   const [isLoading, setIsLoading] = useState(true);
 
   const theme = useTheme();
-  const dataKey = ' @gofinances:transactions';
+  const dataKey = '@gofinances:transactions';
 
   function getLastTransactionDate(collection: DataListProps[], type: 'positive' | 'negative') {
     const lastTransactions = new Date(
