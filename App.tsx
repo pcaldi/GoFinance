@@ -21,6 +21,8 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 import { AppRoutes } from './src/routes/app.routes';
 
+import { SignIn } from './src/screens/SignIn';
+
 export default function App() {
   const [fontsLoaded] = useFonts({
     Poppins_400Regular,
@@ -33,7 +35,7 @@ export default function App() {
       <ThemeProvider theme={theme}>
         <StatusBar barStyle="light-content" />
         <NavigationContainer>
-          {fontsLoaded ? <AppRoutes /> : <ActivityIndicator />}
+          {fontsLoaded ? <SignIn /> : <ActivityIndicator />}
         </NavigationContainer>
       </ThemeProvider>
     </GestureHandlerRootView>
