@@ -11,7 +11,7 @@ type SignInSocialButtonProps = RectButtonProps & {
 
 export function SignInSocialButton({ title, svg: Svg, ...rest }: SignInSocialButtonProps) {
   return (
-    <Button>
+    <Button {...rest}>
       <ImageContainer>
         <Svg />
       </ImageContainer>

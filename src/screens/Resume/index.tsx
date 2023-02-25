@@ -5,6 +5,7 @@ import { VictoryPie } from 'victory-native';
 import { addMonths, subMonths, format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 
+import { useAuth } from '../../hooks/auth';
 import { useTheme } from 'styled-components';
 import { useFocusEffect } from '@react-navigation/native';
 import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
@@ -48,6 +49,7 @@ export function Resume() {
   const [totalByCategories, setTotalByCategories] = useState<CategoryDataProps[]>([]);
   const [selectedDate, setSelectedDate] = useState(new Date());
   const theme = useTheme();
+  const { user } = useAuth();
 
   function handleChangeDate(action: 'next' | 'prev') {
     if (action === 'next') {
@@ -59,7 +61,7 @@ export function Resume() {
 
   async function LoadData() {
     setIsLoading(true);
-    const dataKey = '@gofinances:transactions';
+    const dataKey = `@gofinances:transactions_user:${user.id}`;
     const response = await AsyncStorage.getItem(dataKey);
     const responseFormatted = response ? JSON.parse(response) : [];
 
