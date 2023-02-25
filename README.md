@@ -23,7 +23,7 @@ Aplicativo para ajudar no controle de finanças pessoas de forma simples.
 
 O projeto foi desenvolvido durante o bootcamp **Ignite** da [Rocketseat](https://www.rocketseat.com.br/), com o objetivo de criar uma aplicação mobile com React Native.
 
-Tecnolofias utilizadas **React Native**, **Expo** e **TypeScript**.
+Tecnologias utilizadas **React Native**, **Expo** e **TypeScript**.
 
 ---
 
