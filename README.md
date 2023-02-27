@@ -78,7 +78,7 @@ Você pode visualizar o layout do projeto através [desse link](https://www.figm
 
 ---
 
-## [](https://github.com/BrunoSaibert/go-finances#--tecnologias) 🛠 Tecnologias
+## 🛠 Tecnologias
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
