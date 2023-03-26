@@ -21,10 +21,6 @@ import theme from './src/global/styles/theme';
 import { Routes } from './src/routes';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
-import { AppRoutes } from './src/routes/app.routes';
-
-import { SignIn } from './src/screens/SignIn';
-
 export default function App() {
   const [fontsLoaded] = useFonts({
     Poppins_400Regular,
