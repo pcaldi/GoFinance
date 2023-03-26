@@ -12,11 +12,9 @@
   <br>
 </p>
 
-
-
 ![](https://github.com/pcaldi/GoFinance/blob/main/src/assets/cover.png)
 
-##  💻 Sobre o projeto
+## 💻 Sobre o projeto
 
 Aplicativo para ajudar no controle de finanças pessoas de forma simples.
 
@@ -26,19 +24,17 @@ Tecnologias utilizadas **React Native**, **Expo** e **TypeScript**.
 
 ---
 
-##  ⚙️ Funcionalidades
+## ⚙️ Funcionalidades
 
 - Logar com uma conta Google ou Apple (apenas em iOS)
-- Cadastrar entradas e saídes financeiras
-- Listar cards com entradas, saídes e o total
-- Listar histórico de entradas e saídes financeiras
+- Cadastrar entradas e saídas financeiras
+- Listar cards com entradas, saídas e o total
+- Listar histórico de entradas e saídas financeiras
 - Apresentar gráfico de resumo com as categorias de saídas financeiras
 
 ---
 
 ## 🚀 Como executar o projeto
-
-
 
 #### 🧭 Rodando a aplicação
 
@@ -98,9 +94,10 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - React Native Responsive Fontsize
 
 > Veja o arquivo [package.json](https://github.com/pcaldi/GoFinance/blob/main/package.json)
----
-## 📲 Contato
 
+---
+
+## 📲 Contato
 
 <a href="mailto:pcaldi@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail"/></a>
 
@@ -111,13 +108,9 @@ As seguintes ferramentas foram usadas na construção do projeto:
   </a>
 
 ## :closed_book: Licença
+
 <a>
   <img alt="GitHub License" src="https://img.shields.io/github/license/mathrb22/IgniteLab-Design-System">
 </a>
 
 Esse projeto possui [licença MIT](./LICENSE).
-
-
-
-
-  
